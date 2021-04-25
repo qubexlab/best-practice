@@ -1,0 +1,21 @@
+1.Keep components small and function-specific
+ Benefits of doing this:
+          a.Function specific components makes testing and maintenance easier.
+          b.Each small component can be reused across multiple projects.
+	  c.With smaller components, it's easier to implement performance optimization.
+	  d.It's easier to update smaller components.
+2.Reusability is important, so keep creation of new components to the minimum required.
+3.Consolidate duplicate code-DRY your code.
+4.Put CSS in JavaScript.
+5.comment only where necessary.
+6.Name the component after the function.
+7.Use capitals for component names.
+8.Mind the other naming conventions.
+9.Separate atateful aspects from rendering.
+10.Code should execute as expected and be testable.
+11.All files related to any one component should be in a single filder.
+12.Use tools like Bit.
+13.Use snippet libraries.
+14.Write tests for all code.
+15.Follow linting rules, break up lines that are too long.
+	  
