@@ -1,0 +1,189 @@
+We should follow ES6 Coding style
+
+Types:
+Primitives: When you access a primitive type you work directly on its value.
+
+References:
+1. Use const for all of your references; avoid using var. eslint: prefer-const, no-const-assign. Note that both let and const are block-scoped.
+
+2. If you must reassign references, use let instead of var. eslint: no-var.
+3. Use the literal syntax for array creation
+	
+	// bad
+	const items = new Array();
+	// good
+	const items = [];
+
+4. Use object destructuring when accessing and using multiple properties of an object.
+5. Use single quotes '' for strings.
+6. Never use eval() on a string, it opens too many vulnerabilities. Do not unnecessarily escape characters in strings.
+7. Use named function expressions instead of function declarations.
+	
+	// bad
+	const foo = function () {};
+	// good
+	const short = function longUniqueMoreDescriptiveLexicalFoo() {};
+
+8. ECMA-262 defines a block as a list of statements. A function declaration is not a statement.
+	
+	// bad
+	if (currentUser) {
+  	 function test() {
+    	   console.log('Nope.');
+  	}	
+     }
+	// good
+	let test;
+	if (currentUser) {
+  	 test = () => {
+    	  console.log('Yup.');
+  	   };
+	}
+
+9. Prefer the object spread operator over Object.assign to shallow-copy objects. Use the object rest operator to get a new object with certain properties omitted.
+10. Never name a parameter arguments. This will take precedence over the arguments object that is given to every function scope.
+
+// bad
+function foo(name, options, arguments) {
+  // ...
+}
+
+// good
+function foo(name, options, args) {
+  // ...
+}
+
+11. Never use the Function constructor to create a new function
+12. Prefer the use of the spread operator ... to call variadic functions.
+13. When you must use an anonymous function (as when passing an inline callback), use arrow function notation.
+14. Always include parentheses around arguments for clarity and consistency.
+// bad
+[1, 2, 3].map(x => x * x);
+// good
+[1, 2, 3].map((x) => x * x);
+
+15. Always use class. Avoid manipulating prototype directly.
+16. Class methods should use this or be made into a static method unless an external library or framework requires to use specific non-static methods.
+17. Do not use wildcard imports.
+18. Do not include JavaScript filename extension
+
+// bad
+import foo from './foo.js';
+// good
+import foo from './foo';
+
+19. Use dot notation when accessing properties.
+
+const luke = {
+  jedi: true,
+  age: 28,
+};
+
+// bad
+const isJedi = luke['jedi'];
+// good
+const isJedi = luke.jedi;
+
+20. Use exponentiation operator ** when calculating exponentiations
+
+// bad
+const binary = Math.pow(2, 10);
+// good
+const binary = 2 ** 10;
+
+21. Avoid using unary increments and decrements (++, --)
+// bad
+const array = [1, 2, 3];
+let num = 1;
+num++;
+--num;
+
+// good
+const array = [1, 2, 3];
+let num = 1;
+num += 1;
+num -= 1;
+
+** Comparison Operators & Equality **
+22. Use === and !== over == and !=
+23. Ternaries should not be nested and generally be single line expressions
+24. Avoid unneeded ternary statements.
+
+// bad
+const foo = a ? a : b;
+const bar = c ? true : false;
+const baz = c ? false : true;
+
+// good
+const foo = a || b;
+const bar = !!c;
+const baz = !c;
+
+25. If you’re using multiline blocks with if and else, put else on the same line as your if block’s closing brace
+26. Don't use selection operators in place of control statements.
+
+// bad
+!isRunning && startRunning();
+
+// good
+if (!isRunning) {
+  startRunning();
+}
+
+27. Use /** ... */ for multiline comments.
+28. Leave a blank line after blocks and before the next statement.
+
+// bad
+if (foo) {
+  return bar;
+}
+return baz;
+
+// good
+if (foo) {
+  return bar;
+}
+
+return baz;
+
+29. Do not add spaces inside brackets. eslint: array-bracket-spacing
+
+// bad
+const foo = [ 1, 2, 3 ];
+console.log(foo[ 0 ]);
+
+// good
+const foo = [1, 2, 3];
+console.log(foo[0]);
+
+30. Add spaces inside curly braces. eslint: object-curly-spacing
+
+// bad
+const foo = {clark: 'kent'};
+
+// good
+const foo = { clark: 'kent' };
+
+31. Avoid single letter names. Be descriptive with your naming. eslint: id-length
+
+// bad
+function q() {
+  // ...
+}
+
+// good
+function query() {
+  // ...
+}
+
+32. If the property/method is a boolean, use isVal() or hasVal().
+
+// bad
+if (!dragon.age()) {
+  return false;
+}
+
+// good
+if (!dragon.hasAge()) {
+  return false;
+}
