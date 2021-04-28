@@ -1,0 +1,59 @@
+BEM-like Naming
+For larger, more interrelated pieces of UI that require a number of classes, we use a BEM-like naming convention.
+
+BEM, meaning Block, Element, Modifier, is a front-end methodology. Whilst BEM is a complete methodology, here we are only concerned with its naming convention. 
+Further, the naming convention here only is BEM-like; the principles are exactly the same, but the actual syntax differs slightly.
+
+BEM splits components’ classes into three groups:
+
+Block: The sole root of the component.
+Element: A component part of the Block.
+Modifier: A variant or extension of the Block.
+
+Sass Guideline
+Component based architechture
+diretory
+sass
+	abstracts
+		_function.scss
+		_mixins.scss
+		_variables.scss
+	base
+		_animation
+		_base
+		_typography
+		_utilities
+	components
+	layout
+		_grid
+		_header
+		_footer
+	pages
+		_home
+	themes
+	main.scss
+
+CSS Guideline
+Commenting
+Separate each section by title commenting
+/*=============================================
+section Name
+============================================= */
+
+1. First it should contain basic setup
+2. Second part should be reusable content
+3. Then go to each section and style it
+4. Use multiple line
+
+How to style multiple selectors?
+.btn,
+a,
+#title{
+
+}
+How to style a section
+sectionName
+sectionName innerSection
+SectionName innnerSection innerSection
+
+
